@@ -1,3 +1,4 @@
+<%@page import="com.entity.User"%>
 <%@page import="com.entity.BookDtls"%>
 <%@page import="java.util.List"%>
 <%@page import="com.DB.DBConnect"%>
@@ -19,6 +20,9 @@
 </style>
 </head>
 <body>
+<%
+	User u = (User) session.getAttribute("userobj");
+	%>
 <%@ include file="all_component/navbar.jsp"%>
 <div class = "container-fluid">
 <div class = "row p-3">
@@ -53,8 +57,22 @@
 							categories:<%=b.getBookCategory()%></p>
 						<div class="row ">
 
-							<a href="" class="btn btn-danger btn-sm ml-5"><i
-								class="fas fa-shopping-cart"></i>add cart</a> <a href="view_books.jsp?bid=<%=b.getBookId() %>"
+								<%
+							if (u == null) {
+							%>
+							<a href="login.jsp" class="ml-5 btn btn-danger btn-sm"><i
+								class="fas fa-shopping-cart "></i>add cart</a>
+							<%
+							} else {
+							%>
+							<a href="cartServlet?bid=<%=b.getBookId()%>&&uid=<%=u.getId()%>"
+								class="btn btn-danger btn-sm ml-5"> <i
+								class="fas fa-shopping-cart"></i>add cart
+							</a>
+							<%
+							}
+							%>
+							 <a href="view_books.jsp?bid=<%=b.getBookId() %>"
 								class="btn btn-success btn-sm ml-1">view details</a> <a href=""
 								class="btn btn-danger btn-sm ml-1"><%=b.getPrice()%> <i
 								class="fas fa-rupee-sign"></i></a>
@@ -72,5 +90,6 @@
 </div>
 
 </div>
+<div  class="sticky-bottom"><%@ include file="all_component/footer.jsp"%></div>
 </body>
 </html>

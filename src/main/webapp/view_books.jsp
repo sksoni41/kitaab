@@ -1,3 +1,4 @@
+<%@page import="com.entity.User"%>
 <%@page import="com.entity.BookDtls"%>
 <%@page import="com.DB.DBConnect"%>
 <%@page import="com.DAO.BookDAOImpl"%>
@@ -13,7 +14,9 @@
 <body style="background-color: #f7f7f7;">
 	<%@ include file="all_component/navbar.jsp"%>
 
-
+<%
+	User u = (User) session.getAttribute("userobj");
+	%>
 	<%
 	int id = Integer.parseInt(request.getParameter("bid"));
 	BookDAOImpl dao = new BookDAOImpl(DBConnect.getConn());
@@ -75,14 +78,30 @@
 					<a href="index.jsp" class="btn btn-success"> <i
 						class="fas fa-shopping-cart"></i>Continue Shopping
 					</a> <a href="" class="btn btn-danger"> <i
-						class="fas fa-rupee-sign"></i>200
+						class="fas fa-rupee-sign"></i><%=b.getPrice()%>
 					</a>
 				</div>
 				<%}else {%>
-					<div class=" text-center p-3">
-					<a href="" class="btn btn-primary"> <i
+					<div class=" text-center p-3 ">
+					
+					
+					
+							<%
+							if (u == null) {
+							%>
+							<a href="login.jsp" class="btn btn-danger"><i
+								class="fas fa-shopping-cart"></i>add cart</a>
+							<%
+							} else {
+							%>
+							<a href="cartServlet?bid=<%=b.getBookId()%>&&uid=<%=u.getId()%>"
+								class="btn btn-primary"> <i
 						class="fas fa-shopping-cart"></i>Add Cart
-					</a> <a href="" class="btn btn-danger"> <i
+					</a>
+							<%
+							}
+							%>
+					  <a href="" class="btn btn-danger"> <i
 						class="fas fa-rupee-sign"></i>200
 					</a>
 				</div>
@@ -93,5 +112,6 @@
 		</div>
 
 	</div>
+<div  class="fixed-bottom"><%@ include file="all_component/footer.jsp"%></div>
 </body>
 </html>

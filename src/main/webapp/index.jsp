@@ -13,39 +13,23 @@
 <title>EBOOK: INDEX</title>
 <%@include file="all_component/allCss.jsp"%>
 <style type="text/css">
-.back-img1 {
-	background: url("img/book-bg6.jpg");
-	height: 40vh;
-	width: 100%;
-	background-repeat: no-repeat;
-	background-size: cover;
-}
 
-.back-img {
-	background: url("img/book-pn.jpg");
-	height: 13vh;
-	width: 100%;
-	background-repeat: no-repeat;
-	background-size: cover;
-}
+
 
 .crd-ho:hover {
 	background-color: #edd4d1;
 }
 </style>
 </head>
-<body style="background-color: #f7f7f7;">
+<body class="" style="background-color: #f7f7f7;" >
 	<%
 	User u = (User) session.getAttribute("userobj");
 	%>
 	<%@ include file="all_component/navbar.jsp"%>
-	<div class="container-fluid back-img1 ">
-		<h1 class="text-center text primary text-light display-4 pt-5 "></h1>
-	</div>
-
-	<div class="container-fluid back-img ">
-		<h1 class="text-center text primary text-light display-4 pt-5 "></h1>
-	</div>
+	
+		<img alt="" class="img-fluid "src="img/book-bg6.jpg">
+	    <img alt="" class="img-fluid "src="img/book-pn.jpg">
+	
 	<!-- start recent book -->
 
 
@@ -85,7 +69,8 @@
 						<div class="row ">
 
 
-							<% if (u == null) {
+							<%
+							if (u == null) {
 							%>
 							<a href="login.jsp" class="btn btn-danger btn-sm"><i
 								class="fas fa-shopping-cart"></i>add cart</a>
@@ -100,10 +85,7 @@
 							}
 							%>
 
-
-
-							 
-								<a href="view_books.jsp?bid=<%=b.getBookId()%>"
+							<a href="view_books.jsp?bid=<%=b.getBookId()%>"
 								class="btn btn-success btn-sm ml-1">view details</a> <a href=""
 								class="btn btn-danger btn-sm ml-1"><%=b.getPrice()%> <i
 								class="fas fa-rupee-sign"></i></a>
@@ -125,7 +107,7 @@
 
 		</div>
 		<div class="text-center text-white mt-1">
-			<a href="all_recent_book.jsp" class="btn btn-danger btn-sm">Veiw
+			<a href="all_recent_book.jsp" class="btn btn-danger btn-sm">View
 				All</a>
 		</div>
 	</div>
@@ -191,7 +173,7 @@
 
 		</div>
 		<div class="text-center text-white mt-1">
-			<a href="all_new_book.jsp" class="btn btn-danger btn-sm">Veiw All</a>
+			<a href="all_new_book.jsp" class="btn btn-danger btn-sm">View All</a>
 		</div>
 	</div>
 	<!-- end new book -->
@@ -242,7 +224,7 @@
 
 		</div>
 		<div class="text-center text-white mt-1">
-			<a href="all_old_book.jsp" class="btn btn-danger btn-sm">Veiw All</a>
+			<a href="all_old_book.jsp" class="btn btn-danger btn-sm">View All</a>
 		</div>
 	</div>
 	<!-- end OLD book -->

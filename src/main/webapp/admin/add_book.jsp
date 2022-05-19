@@ -33,6 +33,13 @@
 						<form action="../add_book" method="post"
 							enctype="multipart/form-data">
 							<div class="form-group">
+								<label for="exampleInputEmail1">Book Id</label> <input
+									name="id" type="number" class="form-control"
+									id="exampleInputEmail1" id="exampleInputPassword1"
+									placeholder="">
+
+							</div>
+							<div class="form-group">
 								<label for="exampleInputEmail1">Book Name</label> <input
 									name="bname" type="text" class="form-control"
 									id="exampleInputEmail1" aria-describedby="emailHelp"
@@ -43,6 +50,13 @@
 							<div class="form-group">
 								<label for="exampleInputEmail1">Author Name</label> <input
 									name="author" type="text" class="form-control"
+									id="exampleInputEmail1" aria-describedby="emailHelp"
+									placeholder="">
+
+							</div>
+							<div class="form-group">
+								<label for="exampleInputEmail1">Copies</label> <input
+									name="copies" type="number" class="form-control"
 									id="exampleInputEmail1" aria-describedby="emailHelp"
 									placeholder="">
 

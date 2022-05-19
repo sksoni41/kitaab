@@ -29,7 +29,7 @@ color : black;
 	
 	<div class="container">
 		<div class="row p-5">
-			<div class="col-md-3">
+			<div class="col-md-4">
 			<a href = "add_book.jsp">
 				<div class="card">
 					<div class="card-body text-center">
@@ -40,7 +40,7 @@ color : black;
 				</div>
                  </a>
 			</div>
-			<div class="col-md-3">
+			<div class="col-md-4">
 			<a href = "all_books.jsp">
 				<div class="card">
 					<div class="card-body text-center">
@@ -51,7 +51,7 @@ color : black;
 				</div>
                   </a>
 			</div>
-			<div class="col-md-3">
+			<div class="col-md-4">
 			<a href = "orders.jsp">
 				<div class="card">
 					<div class="card-body text-center">
@@ -62,7 +62,29 @@ color : black;
 				</div>
 </a>
 			</div>
-			<div class="col-md-3">
+			<div class="col-md-4 mt-3">
+			<a href = "stock.jsp">
+				<div class="card">
+					<div class="card-body text-center">
+						<i class="fas fa-warehouse fa-3x text-primary"></i><br>
+						<h4>stock management</h4>
+						-------------
+					</div>
+				</div>
+</a>
+			</div>
+			<div class="col-md-4 mt-3">
+			<a href = "revenue.jsp">
+				<div class="card">
+					<div class="card-body text-center">
+						<i class="fas fa-hand-holding-usd fa-3x text-success"></i><br>
+						<h4>Revenue</h4>
+						-------------
+					</div>
+				</div>
+</a>
+			</div>
+			<div class="col-md-4 mt-3">
 				<a href = "#" data-toggle="modal" data-target="#exampleModalCenter">
 				<div class="card">
 					<div class="card-body text-center text-danger">
@@ -103,6 +125,6 @@ color : black;
   </div>
 </div>
 <!--logout modal end -->
-	<div style="margin-top:250px;"><%@ include file="footer.jsp" %></div>
+	<div class="fixed-bottom"><%@ include file="footer.jsp" %></div>
 </body>
 </html>

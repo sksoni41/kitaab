@@ -94,7 +94,7 @@ to {
 			for (BookDtls b : list) {
 			%>
 			<div class="col-md-3">
-				<div class="card crd-ho">
+				<div class="card crd-ho mt-2 ">
 					<div class="card-body text-center">
 						<img alt="" src="book/<%=b.getPhotoName()%>"
 							style="width: 100; height: 150px" class="img-thumbnail">
@@ -106,13 +106,13 @@ to {
 							
 								<% if (u == null) {
 							%>
-							<a href="login.jsp" class="btn btn-danger btn-sm"><i
+							<a href="login.jsp" class="btn btn-danger btn-sm ml-5"><i
 								class="fas fa-shopping-cart"></i>add cart</a>
 							<%
 							} else {
 							%>
 							<a href="cartServlet?bid=<%=b.getBookId()%>&&uid=<%=u.getId()%>"
-								class="btn btn-danger btn-sm"> <i
+								class="btn btn-danger btn-sm ml-5"> <i
 								class="fas fa-shopping-cart"></i>add cart
 							</a>
 							<%
@@ -135,5 +135,6 @@ to {
 		</div>
 
 	</div>
+	<div  class="sticky-bottom"><%@ include file="all_component/footer.jsp"%></div>
 </body>
 </html>

@@ -37,9 +37,8 @@
 						<p><%=b.getAuthor()%></p>
 						<p>
 							categories:<%=b.getBookCategory()%></p>
-						<div class="row ">
-							<a href="" class="btn btn-danger btn-sm"><i
-								class="fas fa-shopping-cart"></i>add cart</a> 
+						<div class="row ml-5">
+							 
 								<a href="view_books.jsp?bid=<%=b.getBookId() %>"class="btn btn-success btn-sm ml-1">view details</a> <a href=""
 								class="btn btn-danger btn-sm ml-1"><%=b.getPrice()%> <i
 								class="fas fa-rupee-sign"></i></a>
@@ -51,7 +50,8 @@
 			}
 			%>
 </div>
-
+<div  class="fixed-bottom"><%@ include file="all_component/footer.jsp"%></div>
 </div>
+
 </body>
 </html>

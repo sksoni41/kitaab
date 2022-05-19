@@ -1,5 +1,7 @@
 package com.entity;
 
+
+
 public class BookDtls {
 private int bookId;
 private String bookname;
@@ -9,14 +11,28 @@ private String bookCategory;
 private String status;
 private String photoName;
 private String email;
+
 public BookDtls() {
 	super();
-	// TODO Auto-generated constructor stub
+	
 }
-public BookDtls(String bookname, String author, String price, String bookCategory, String status,
+
+public BookDtls(String bookname, String author, String price, String bookCategory, String status, String photoName,
+		String email) {
+	super();
+	this.bookname = bookname;
+	this.author = author;
+	this.price = price;
+	this.bookCategory = bookCategory;
+	this.status = status;
+	this.photoName = photoName;
+	this.email = email;
+}
+
+public BookDtls(int bookId,String bookname, String author, String price, String bookCategory, String status,
 		String photoName, String email) {
 	super();
-	
+	this.bookId=bookId;
 	this.bookname = bookname;
 	this.author = author;
 	this.price = price;
@@ -73,6 +89,8 @@ public String getEmail() {
 public void setEmail(String email) {
 	this.email = email;
 }
+
+
 @Override
 public String toString() {
 	return "BookDtls [bookId=" + bookId + ", bookname=" + bookname + ", author=" + author + ", price=" + price

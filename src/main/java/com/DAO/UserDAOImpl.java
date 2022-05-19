@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 
 import com.entity.User;
 
+
 public class UserDAOImpl implements UserDAO{
 
 	private Connection conn;
@@ -64,6 +65,67 @@ User us = null;
 			e.printStackTrace();
 		}
 	return us;
+	}
+
+	public boolean checkPassword(int id, String pw) {
+		boolean f = false;
+		try {
+			String sql = "select * from user where id=? and password=?";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setInt(1,id);
+			ps.setString(2, pw);
+			ResultSet rs =ps.executeQuery();
+			while(rs.next()) {
+				f= true;
+			}
+		} catch (Exception e) {
+		e.printStackTrace();
+		}
+		
+		
+		
+		
+		return f;
+	}
+
+	public boolean updateProfile(User us) {
+		boolean f = false;
+		try {
+			String sql= "update  user set name=?,email=?,phno=? where id=?";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setString(1, us.getName());
+			ps.setString(2, us.getEmail());
+			ps.setString(3, us.getPhno());
+			ps.setInt(4, us.getId());
+			int i = ps.executeUpdate();
+			if(i==1) {
+				f=true;
+			}
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+		}
+		return f;
+	}
+
+	public boolean checkUser(String email) {
+		boolean f = true;
+		try {
+			String sql= "select * from user where email = ?";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setString(1, email);
+			
+
+ResultSet rs = ps.executeQuery();
+while (rs.next()) {
+	f= false;
+}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		
+		return f;
 	}
 	
 	

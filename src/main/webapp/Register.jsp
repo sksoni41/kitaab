@@ -54,7 +54,7 @@
 									id="exampleCheck1" > <label class="form-check-label" 
 									for="exampleCheck1">Agree terms and condition</label>
 							</div>
-							<button type="submit" class="btn btn-primary">Submit</button>
+							<button type="submit" class="btn btn-primary btn-block btn-sm">Submit</button>
 						</form>
 
 
@@ -63,6 +63,6 @@
 			</div>
 		</div>
 	</div>
-	<%@ include file="all_component/footer.jsp"%>
+	<div  class="fixed-bottom"><%@ include file="all_component/footer.jsp"%></div>
 </body>
 </html>
