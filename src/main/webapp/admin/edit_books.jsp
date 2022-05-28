@@ -35,7 +35,7 @@
 								<label for="exampleInputEmail1">Book Id</label>
 								 <input
 									name="id" type="text" class="form-control"
-									id="exampleInputEmail1" value = "<%=b.getBookId()%>" aria-describedby="emailHelp" >
+									id="exampleInputEmail1" value = "<%=b.getBookId()%>" aria-describedby="emailHelp" readonly >
 									
 
 							</div>
@@ -43,7 +43,7 @@
 								<label for="exampleInputEmail1">Book Name</label>
 								 <input
 									name="bname" type="text" class="form-control"
-									id="exampleInputEmail1" value = "<%=b.getBookname()%>" aria-describedby="emailHelp" >
+									id="exampleInputEmail1" value = "<%=b.getBookname()%>" aria-describedby="emailHelp" readonly>
 									
 
 							</div>
@@ -52,14 +52,14 @@
 								<label for="exampleInputEmail1">Author Name</label> <input
 									name="author" type="text" class="form-control"
 									id="exampleInputEmail1" aria-describedby="emailHelp"
-									placeholder="" value = "<%=b.getAuthor()%>">
+									placeholder="" value = "<%=b.getAuthor()%>" readonly>
 
 							</div>
 							<div class="form-group">
 								<label for="exampleInputEmail1">Price</label> <input
 									name="price" type="number" class="form-control"
 									id="exampleInputEmail1" id="exampleInputPassword1"
-									placeholder="" value = "<%=b.getPrice()%>">
+									placeholder="" value = "<%=b.getPrice()%>" readonly>
 
 							</div>
 							
